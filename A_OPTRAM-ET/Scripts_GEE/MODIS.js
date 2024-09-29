@@ -1,9 +1,9 @@
-// Copyright © 2020 Zhaoyuan Yao, All right reserved.
+// Copyright © 2024 Zhaoyuan Yao, All right reserved.
 //
 var ndvi_min = 0.1;
 var ndvi_max = 0.9;
 
-var para = ee.Image('projects/ee-zhaoyuan-yao/assets/OPTRAM/MOD09A1_OPTRAM_GLOBAL_IMG_good0227_buffer200km_5')
+var para = ee.Image('projects/ee-zhaoyuan-yao/assets/OPTRAM/MOD09A1_OPTRAM_GLOBAL_IMG_good0229_buffer200km_5')
 
 var wet_k = para.select('top_k');
 var wet_b = para.select('top_b');
@@ -12,10 +12,10 @@ var dry_b = para.select('bottom_b');
 
 var filterDate = ee.Filter.date('2018-04-26', '2018-09-01');
 print(ee.ImageCollection('MODIS/061/MOD09GA').filter(filterDate))
-var image = ee.ImageCollection('MODIS/061/MOD09GA').filter(filterDate).first();
 // var image = ee.ImageCollection('MODIS/061/MOD09GA').filter(filterDate).first();
-// var sr_qa = image.select('StateQA');
-var sr_qa = image.select('state_1km');
+// var sr_qa = image.select('state_1km');
+var image = ee.ImageCollection('MODIS/061/MOD09A1').filter(filterDate).first();
+var sr_qa = image.select('StateQA');
 var cloudMask = sr_qa.bitwiseAnd(1 << 0)
             .eq(sr_qa.bitwiseAnd(1 << 1)); // cloud clear
 var cloudshadowMask = sr_qa.bitwiseAnd(1 << 2).eq(0); // cloud shadow clear
@@ -77,6 +77,7 @@ var Rn = mo_image.select('surface_net_solar_radiation_sum').add(mo_image.select(
 
 var EF = ee.Image(phi).multiply(delta).divide(delta.add(gamma))
 
+// Following Tang et al. (2010), soil heat flux can be formulated as:
 // // v: 0.05, s: 0.4
 // var G  = fr.multiply(-1).add(1).multiply(0.4 - 0.05).add(0.05).multiply(Rn)
 // var LE = Rn.subtract(G).multiply(EF); // latent heat flux[W m-2]
@@ -95,14 +96,14 @@ var visualization = {
 };
                             
 Map.addLayer(LE.updateMask(mask).divide(28.94), visualization, 'OPTRAM-ET')
-// Map.addLayer(ee.Image('MODIS/061/MOD16A2/2021_06_02').select('LE')
-//               .multiply(10000)
-//               .multiply(1.1574e-5)
-//               .divide(28.94)
-//               , visualization, 'MOD16')
-// Map.addLayer(ee.Image('CAS/IGSNRR/PML/V2_v017/2021-06-02').select('Ei')
-//         .add(ee.Image('CAS/IGSNRR/PML/V2_v017/2021-06-02').select('Ec'))
-//         .add(ee.Image('CAS/IGSNRR/PML/V2_v017/2021-06-02').select('Es'))
-//         , visualization, 'PML')
+Map.addLayer(ee.Image('MODIS/006/MOD16A2/2018_05_01').select('LE')
+              .multiply(10000)
+              .multiply(1.1574e-5)
+              .divide(28.94)
+              , visualization, 'MOD16')
+Map.addLayer(ee.Image('CAS/IGSNRR/PML/V2_v017/2018-05-01').select('Ei')
+        .add(ee.Image('CAS/IGSNRR/PML/V2_v017/2018-05-01').select('Ec'))
+        .add(ee.Image('CAS/IGSNRR/PML/V2_v017/2018-05-01').select('Es'))
+        , visualization, 'PML')
 
 
