@@ -7,7 +7,7 @@ Remotely sensed evapotranspiration (ET) with high resolution has wide-ranging ap
 Google Earth Engine; Global Evapotranspiration; Field Scale; High Resolution (30m)
 
 ## Citation
-Zhaoyuan Yao, Yaokui Cui, Wangyipu Li.(2024) A_OPTRAM-ET: An automatic optical trapezoid model for evapotranspiration estimation and its global-scale assessment. ISPRS JPRS. Under review.
+Zhaoyuan Yao, Yaokui Cui, Wangyipu Li.(2024) A_OPTRAM-ET: An automatic optical trapezoid model for evapotranspiration estimation and its global-scale assessment. ISPRS JPRS. Accepted.
 
 ## Performances
 
