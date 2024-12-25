@@ -4,5 +4,5 @@ A_OPTRAM-ET is an automatic optical trapezoid model for evapotranspiration (ET) 
 
 Yao, Zhaoyuan, Li, Wangyipu, Cui, Yaokui. "A_OPTRAM-ET: An automatic optical trapezoid model for evapotranspiration estimation and its global-scale assessments." *ISPRS Journal of Photogrammetry and Remote Sensing 218 (Part B)* (2024): 181-197.
 
-## The A_OPTRAM-ET models developed with Landsat-8 OLI, Sentinel-2 MSI, and Terra MODIS are now availiable for global ET mapping.
+## The A_OPTRAM-ET models developed with Landsat-8 OLI, Sentinel-2 MSI, and Terra MODIS are now available for global ET mapping.
 
