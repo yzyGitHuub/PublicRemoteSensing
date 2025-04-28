@@ -6,4 +6,5 @@ Yao, Zhaoyuan, Li, Wangyipu, Cui, Yaokui. "A_OPTRAM-ET: An automatic optical tra
 
 ## The A_OPTRAM-ET models developed with Landsat-8 OLI, Sentinel-2 MSI, and Terra MODIS are now available for global ET mapping.
 
-![A_OPTRAMET](./Images/AOPTRAMET.png "AOPTRAMET_IrrigatedArea")
+![A_OPTRAMET](./Images/AOPTRAMET.jpg "AOPTRAMET_IrrigatedArea")
+
