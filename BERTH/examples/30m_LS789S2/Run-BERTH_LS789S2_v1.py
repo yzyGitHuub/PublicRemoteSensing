@@ -1,3 +1,6 @@
+# Zhaoyuan Yao et al., 2025
+# Email: yzy.sess@pku.edu.cn
+
 import numpy as np
 import torch
 import os

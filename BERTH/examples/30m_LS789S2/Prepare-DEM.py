@@ -1,3 +1,6 @@
+# Zhaoyuan Yao et al., 2025
+# Email: yzy.sess@pku.edu.cn
+
 import ee
 import requests
 import io
@@ -13,8 +16,6 @@ columns_berth = columns_rs + columns_mo + columns_terrain
 # GEE
 ee.Authenticate()
 ee.Initialize(project='Your-GEE-Project')
-# Zhaoyuan Yao et al., 2025
-# Email: yzy.sess@pku.edu.cn
 
 # Download DEM via GEE
 def preprocess_terrain():
