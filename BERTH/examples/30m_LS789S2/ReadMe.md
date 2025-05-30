@@ -1,4 +1,4 @@
-## Hydrology estimation using BERTH driven by MODIS
+## Hydrology estimation using BERTH driven by Landsat-7/8/9 and Sentinel-2
 ## Overview
 0. Initialize (region, spatial resolution)
 1. Prepare data (Landsat-7/8/9, Sentinel-2, ERA5-Land, MERIT DEM)
