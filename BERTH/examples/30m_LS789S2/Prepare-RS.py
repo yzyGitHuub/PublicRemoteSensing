@@ -91,7 +91,7 @@ def preprocess_remotesensing(date_offset):
         .filter(ee.Filter.neq('system:index', '20190117T010959_20190117T011000_T55TEN'))\
         .filter(ee.Filter.neq('system:index', '20190117T061209_20190117T061411_T42TVK'))\
         .filter(ee.Filter.neq('system:index', '20190117T140051_20190117T141300_T20HND'))\
-        .map(preprocess_single_S2)
+        .map(preprocess_single_S2_band_pass)
     day_images = ee.ImageCollection(day_images_ls89).merge(day_images_s2)
     data = ee.Algorithms.If(condition=ee.ImageCollection(day_images).first(),\
                             trueCase=day_images.mean().unmask(-1),\
