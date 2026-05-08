@@ -10,4 +10,5 @@ Bidirectional Encoder Representations from Transformers for Hydrology (BERTH), i
 ## HighET
 High-solution ET (30 m) retrieval using Transformer.
 
-
+## ChinaSM_1km
+Daily 1-km SM retrieval in China using a two-step framework, containing a satellite-satellite downscaling module and a satellite-ground calibration module.
